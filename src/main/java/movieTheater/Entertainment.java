@@ -98,7 +98,7 @@ public class Entertainment {
                     } else if (option.equalsIgnoreCase("info")) {
                         service.showTheaterInfo();
                     } else if (option.equalsIgnoreCase("quit")) {
-                        System.out.println("HAVE A NICE DAY!!!");
+                        System.out.println("HAVE A NICE DAY!!!!");
                         break;
                     }else{
                         System.out.println("INVALID VALUE. TRY AGAIN");
