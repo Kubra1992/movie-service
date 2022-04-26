@@ -8,7 +8,7 @@ public class Entertainment {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("WELCOME TO MOVIE WORLD! PLEASE CHOOSE YOUR FAVORITE THEATER");
-        System.out.println("AMC | REGAL | EMAGINE | FANDANGO");
+        System.out.println("AMC | REGAL | EMAGINE | IPIC");
         String theater = scanner.nextLine().toUpperCase(Locale.ROOT);
 
         MovieService service = null;
@@ -38,12 +38,72 @@ public class Entertainment {
                }
                break;
             case "REGAL":
+                service = new Regal(145, true, 4, 1, true, true, "Second Floor");
+                service.welcomeCustomers();
 
+                while (true){
+                    System.out.println("movies | seats | info | quit");
+                    String option = scanner.nextLine();
+                    if (option.equalsIgnoreCase("movies")){
+                        service.showAvailableMovies();
+                    } else if (option.equalsIgnoreCase("seats")){
+                        System.out.print("Which movie ? ");
+                        String movieName = scanner.nextLine();
+                        service.showAvailableSeat(movieName);
+                    } else if (option.equalsIgnoreCase("info")) {
+                        service.showTheaterInfo();
+                    } else if (option.equalsIgnoreCase("quit")) {
+                        System.out.println("HAVE A NICE DAY!!!");
+                        break;
+                    }else{
+                        System.out.println("INVALID VALUE. TRY AGAIN");
+                    }
+                }
                 break;
             case "EMAGINE":
+                service=new Emagine(50,false,4,3,true,true,"Birthdays");
+                service.welcomeCustomers();
+                while (true){
+                    System.out.println("movies | seats | info | quit");
+                    String option = scanner.nextLine();
+                    if (option.equalsIgnoreCase("movies")){
+                        service.showAvailableMovies();
+                    } else if (option.equalsIgnoreCase("seats")){
+                        System.out.print("Which movie ? ");
+                        String movieName = scanner.nextLine();
+                        service.showAvailableSeat(movieName);
+                    } else if (option.equalsIgnoreCase("info")) {
+                        service.showTheaterInfo();
+                    } else if (option.equalsIgnoreCase("quit")) {
+                        System.out.println("HAVE A NICE DAY!!!");
+                        break;
+                    }else{
+                        System.out.println("INVALID VALUE. TRY AGAIN");
+                    }
+                }
 
                 break;
-            case "FANDANGO":
+            case "IPIC":
+                service=new Ipic(30,true,2,1,true,true,"Burgers with french fries");
+                service.welcomeCustomers();
+                while (true){
+                    System.out.println("movies | seats | info | quit");
+                    String option = scanner.nextLine();
+                    if (option.equalsIgnoreCase("movies")){
+                        service.showAvailableMovies();
+                    } else if (option.equalsIgnoreCase("seats")){
+                        System.out.print("Which movie ? ");
+                        String movieName = scanner.nextLine();
+                        service.showAvailableSeat(movieName);
+                    } else if (option.equalsIgnoreCase("info")) {
+                        service.showTheaterInfo();
+                    } else if (option.equalsIgnoreCase("quit")) {
+                        System.out.println("HAVE A NICE DAY!!!");
+                        break;
+                    }else{
+                        System.out.println("INVALID VALUE. TRY AGAIN");
+                    }
+                }
 
                 break;
         }
